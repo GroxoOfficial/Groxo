@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Groxo - Smart Shopping Store</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background: #111;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    .tagline {
+      font-size: 1rem;
+      color: #ccc;
+      margin-top: 4px;
+    }
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+    }
+    .product {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .product img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: contain;
+      margin-bottom: 1rem;
+    }
+    .product h3 {
+      margin: 0.5rem 0;
+    }
+    .price {
+      color: green;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    .buy-btn {
+      background: #111;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+    .buy-btn:hover {
+      background: #333;
+      transform: scale(1.05);
+    }
+    .upi-section {
+      text-align: center;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #fff;
+      border-radius: 10px;
+      max-width: 400px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .upi-section img {
+      width: 200px;
+      margin: 1rem auto;
+    }
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    GROXO
+    <div class="tagline">Smart Deals | Quick Orders | Trusted Store</div>
+  </header>
+
+  <!-- 🔧 You can change this category name -->
+  <h2 style="text-align:center; margin: 1rem;">🔥 Top Deals</h2>
+
+  <div class="product-list">
+    <div class="product">
+      <img src="https://i.postimg.cc/kXQ9n4rn/product1.jpg" alt="Product 1">
+      <h3>Mini Chopper</h3>
+      <p class="price">₹129</p>
+      <button class="buy-btn" onclick="orderWhatsApp('Mini Chopper', 129)">Buy Now</button>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/Px4SsbGB/product2.jpg" alt="Product 2">
+      <h3>Phone Stand</h3>
+      <p class="price">₹89</p>
+      <button class="buy-btn" onclick="orderWhatsApp('Phone Stand', 89)">Buy Now</button>
+    </div>
+    <div class="product">
+      <img src="https://i.postimg.cc/NFT1XgTW/product3.jpg" alt="Product 3">
+      <h3>USB Light</h3>
+      <p class="price">₹49</p>
+      <button class="buy-btn" onclick="orderWhatsApp('USB Light', 49)">Buy Now</button>
+    </div>
+  </div>
+
+  <div class="upi-section">
+    <h3>Scan & Pay via UPI</h3>
+    <img src="https://i.postimg.cc/9MbPgFks/qr.png" alt="Pay QR Code">
+    <p>Pay via PhonePe or any UPI app.<br>Send screenshot on WhatsApp after payment.</p>
+  </div>
+
+  <footer>
+    © 2025 Groxo Store. All rights reserved.
+  </footer>
+
+  <script>
+    function orderWhatsApp(product, price) {
+      const message = `Hi, I want to order:\nProduct: ${product}\nPrice: ₹${price}\nPlease confirm availability.`;
+      const number = '91' + atob('OTk0MjY3MDQ0Mg=='); // Encoded for privacy
+      window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`, '_blank');
+    }
+  </script>
+
+</body>
+</html>
